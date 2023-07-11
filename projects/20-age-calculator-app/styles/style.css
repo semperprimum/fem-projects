@@ -1,0 +1,230 @@
+@import url("./fonts.css");
+.attribution {
+    position: static;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    margin: 2rem 0 1rem 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgba(35, 36, 41, 0.8);
+}
+.attribution a {
+    color: rgba(35, 36, 41, 0.6);
+    transition: 0.2s ease;
+    text-decoration: underline;
+}
+.attribution a:hover,
+.attribution a:active {
+    color: rgba(35, 36, 41, 0.4);
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.fade-in {
+    animation: fade-in 1.5s;
+    -webkit-animation: fade-in 1.5s;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+body {
+    background-color: #f0f0f0;
+    font-family: "Poppins", sans-serif;
+}
+
+main {
+    margin: 5.5rem 1rem;
+    padding: 3rem 1.5rem 2rem;
+    background-color: white;
+    border-radius: 1.5rem 1.5rem 6.5rem;
+}
+
+.input-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-control__label {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #716f6f;
+    font-size: 0.75rem;
+    letter-spacing: 0.175rem;
+    margin-bottom: 0.3rem;
+}
+.input-control__input {
+    max-width: 23vw;
+    padding: 0.7rem 0.9rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    border: 0.075rem solid #dbdbdb;
+    border-radius: 0.5rem;
+}
+.input-control.error .input-control__input {
+    border: 0.075rem solid #ff5757;
+}
+.input-control.error .input-control__error {
+    display: block;
+    max-width: 23vw;
+    font-size: 0.75rem;
+    line-height: 1.35;
+    margin-top: 0.5rem;
+    color: #ff5757;
+}
+.input-control.error .input-control__label {
+    color: #ff5757;
+}
+
+.submit-btn {
+    position: relative;
+    margin-top: 2rem;
+    margin-inline: auto;
+    display: block;
+    width: 4.05rem;
+    height: 4.05rem;
+    border-radius: 50%;
+    border: none;
+    background-color: #854dff;
+}
+.submit-btn__icon {
+    width: 1.678rem;
+    stroke: white;
+    fill: transparent;
+    margin-top: 0.35rem;
+    stroke-width: 0.2rem;
+}
+
+.btn-wrapper {
+    position: relative;
+}
+.btn-wrapper::before {
+    content: "";
+    position: absolute;
+    background-color: #f0f0f0;
+    width: 100%;
+    height: 0.1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.answers-list {
+    margin-top: 2rem;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    font-style: italic;
+    font-weight: 800;
+    line-height: 1.1;
+}
+.answers-list li {
+    font-size: 3.5rem;
+    letter-spacing: -0.05rem;
+}
+
+.answer-number {
+    color: #854dff;
+    margin-right: -0.2rem;
+}
+
+@media only screen and (min-width: 45em) {
+    body {
+        display: grid;
+        place-items: center;
+        padding: 1rem;
+        position: relative;
+    }
+
+    main {
+        max-width: 52.5rem;
+        width: 100%;
+        padding: 3.5rem;
+        border-radius: 1.5rem 1.5rem 12.5rem;
+    }
+
+    .input-group {
+        justify-content: start;
+        gap: 2rem;
+    }
+
+    .input-control__label {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+    .input-control__input {
+        max-width: 10rem;
+        font-size: 2rem;
+        padding: 0.7rem 0.5rem 0.7rem 1.5rem;
+    }
+    .input-control__input:active, .input-control__input:focus-visible {
+        border: 0.075rem solid #854dff;
+        outline: 0.3rem dashed rgba(133, 77, 255, 0.5);
+        outline-offset: 0.15rem;
+    }
+    .input-control.error .input-control__error {
+        font-size: 0.88rem;
+        font-style: italic;
+    }
+
+    .submit-btn {
+        margin: 0 0 0 auto;
+        width: 6rem;
+        height: 6rem;
+        cursor: pointer;
+        transition: all 0.25s ease;
+    }
+    .submit-btn__icon {
+        width: 3rem;
+        stroke-width: 0.125rem;
+    }
+    .submit-btn:hover, .submit-btn:focus-visible {
+        background-color: #141414;
+        scale: 1.1;
+    }
+    .submit-btn:active {
+        scale: 0.7;
+    }
+    .submit-btn:focus-visible {
+        outline: 0.3rem dashed rgba(133, 77, 255, 0.7);
+        outline-offset: 0.15rem;
+    }
+
+    .answers-list {
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 1.095;
+    }
+    .answers-list li {
+        font-size: 6.5rem;
+        letter-spacing: -0.1rem;
+    }
+
+    .answer-number {
+        letter-spacing: 1rem;
+        margin-right: -1.65rem;
+    }
+    .answer-number.has-number {
+        letter-spacing: 0;
+        margin-right: -0.8rem;
+    }
+
+    .attribution {
+        position: absolute;
+    }
+}

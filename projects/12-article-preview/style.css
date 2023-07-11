@@ -1,0 +1,236 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+ul[role=list],
+ol[role=list] {
+    list-style-type: none;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    color: #6d7f97;
+    min-height: 100vh;
+    background: #ecf2f8;
+}
+
+main {
+    margin: 4.5rem 1.55rem;
+    overflow: hidden;
+    border-radius: 0.65rem;
+    background: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0 0.5rem 1.8rem 0;
+}
+
+.image-wrapper {
+    max-height: 12.5rem;
+    overflow: hidden;
+}
+
+.article-main {
+    padding: 2.5rem 2rem 1.1rem 2rem;
+}
+.article-main .article-main__heading {
+    font-weight: 700;
+    color: #48556a;
+    margin-bottom: 1ch;
+    line-height: 1.5rem;
+    letter-spacing: 0.01rem;
+}
+.article-main .article-main__excerpt {
+    font-weight: 500;
+    color: #9eafc2;
+    font-size: 0.8rem;
+    line-height: 1.25rem;
+    max-width: 31ch;
+}
+
+.article-footer {
+    padding: 1.1rem 2rem 1.25rem 2rem;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+}
+.article-footer .author {
+    display: flex;
+    gap: 2ch;
+}
+.article-footer .author .author-image {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.article-footer .author .author-info {
+    font-size: 0.8rem;
+    display: grid;
+    gap: 0.25rem;
+}
+.article-footer .author .author-info .author-name {
+    font-weight: 700;
+    color: #48556a;
+}
+.article-footer .author .author-info .date-published {
+    color: #9eafc2;
+}
+.article-footer .share {
+    z-index: 1;
+}
+.article-footer .share .share-button {
+    border: 0;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background: #ecf2f8;
+    fill: #6d7f97;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+.article-footer .share .share-button:hover, .article-footer .share .share-button:active {
+    fill: #ecf2f8;
+    background: #6d7f97;
+}
+.article-footer .share .share-button.active {
+    fill: #ecf2f8;
+    background: #6d7f97;
+}
+.article-footer .share .share-options {
+    position: absolute;
+    padding: 1.25rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    z-index: -1;
+    transform: translateY(100%);
+    background: #48556a;
+    transform-origin: bottom;
+    inset: 0;
+    transition: all 0.25s ease;
+    visibility: hidden;
+}
+.article-footer .share .share-options span {
+    color: #9eafc2;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+.article-footer .share .share-options .share-options-list {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.article-footer .share .share-options.active {
+    visibility: visible;
+    transform: translateY(0);
+}
+
+@media (min-width: 45em) {
+    body {
+        display: grid;
+        place-items: center;
+    }
+
+    main {
+        overflow: visible;
+        max-width: 45.5rem;
+        max-height: 17.5rem;
+        margin: 1rem;
+        display: grid;
+        grid-template-columns: 18rem minmax(18.75rem, 28rem);
+    }
+
+    .image-wrapper {
+        max-height: 100%;
+        border-radius: 0.65rem 0 0 0.65rem;
+        overflow: hidden;
+    }
+
+    .article-banner {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: left;
+    }
+
+    .article-main {
+        padding: 2rem 2.5rem 1.5rem;
+    }
+    .article-main .article-main__heading {
+        font-size: 1.25rem;
+        line-height: 1.7rem;
+    }
+    .article-main .article-main__excerpt {
+        max-width: 100%;
+    }
+
+    .article-footer {
+        position: static;
+        padding: 0 2.5rem 1.875rem;
+    }
+
+    .share {
+        position: relative;
+    }
+    .share .share-options {
+        left: 50% !important;
+        transform: translateX(-45%) translateY(-200%) !important;
+        inset: auto !important;
+        border-radius: 0.5rem;
+        transition: all 0.25s ease !important;
+        opacity: 0;
+    }
+    .share .share-options.active {
+        opacity: 1;
+    }
+    .share .share-options:after {
+        content: "";
+        background: #48556a;
+        width: 1.5rem;
+        height: 1.5rem;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -60%) rotate(45deg);
+    }
+    .share .share-options-list li {
+        min-width: 20px;
+    }
+}

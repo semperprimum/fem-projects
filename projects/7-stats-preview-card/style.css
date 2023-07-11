@@ -1,0 +1,146 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.sr-only {
+    position: fixed;
+    opacity: 0;
+    left: 0;
+    top: 0;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+* {
+    margin: 0;
+    font: inherit;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.75);
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background: #090b1a;
+}
+
+main {
+    max-width: 330px;
+    background: #1b1938;
+    overflow: hidden;
+    border-radius: 0.8rem;
+}
+main img {
+    filter: invert(12%) sepia(50%) saturate(750%) hue-rotate(225deg) brightness(60%) contrast(90%);
+}
+
+.img-desktop {
+    display: none;
+}
+
+.img-mobile {
+    margin-bottom: 0.4rem;
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+}
+
+.heading-primary {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+    line-height: 2rem;
+    letter-spacing: 0.03rem;
+}
+.heading-primary span {
+    color: #aa5cdb;
+}
+
+.paragraph-primary {
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.55rem;
+    margin-bottom: 2.5rem;
+}
+
+.stats-list {
+    display: flex;
+    flex-flow: column;
+    gap: 1.65rem;
+}
+.stats-list li {
+    display: flex;
+    flex-flow: column;
+    gap: 0.4rem;
+}
+.stats-list li h3 {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: white;
+}
+.stats-list li p {
+    font-family: "Lexend Deca", sans-serif;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+@media (min-width: 1110px) {
+    main {
+        max-width: 1110px;
+        display: grid;
+        grid-template-columns: 1fr 540px;
+    }
+    main .img-desktop {
+        order: 1;
+    }
+
+    .container {
+        text-align: left;
+        padding: 4.5rem 7rem 0 4.5rem;
+    }
+
+    .heading-primary {
+        font-size: 2.2rem;
+        line-height: 2.7rem;
+        margin-bottom: 1.6rem;
+    }
+
+    .paragraph-primary {
+        margin-bottom: 4.5rem;
+    }
+
+    .stats-list {
+        flex-flow: row;
+        gap: 3.9rem;
+    }
+
+    .img-desktop {
+        display: block;
+    }
+
+    .img-mobile {
+        display: none;
+    }
+}

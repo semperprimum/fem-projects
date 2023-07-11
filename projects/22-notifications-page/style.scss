@@ -1,0 +1,288 @@
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("./assets/fonts/static/PlusJakartaSans-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("./assets/fonts/static/PlusJakartaSans-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+}
+
+// Variables
+$clr-primary-red: hsl(1, 90%, 64%);
+$clr-primary-blue: hsl(219, 85%, 26%);
+
+$clr-neutral-100: hsl(0, 0%, 100%);
+$clr-neutral-200: hsl(210, 60%, 98%);
+$clr-neutral-300: hsl(211, 68%, 94%);
+$clr-neutral-400: hsl(205, 33%, 90%);
+$clr-neutral-500: hsl(219, 14%, 63%);
+$clr-neutral-600: hsl(219, 12%, 42%);
+$clr-neutral-700: hsl(224, 21%, 14%);
+
+$fs-primary: 1rem;
+
+$ff-primary: "Plus Jakarta Sans", sans-serif;
+
+$fw-medium: 500;
+$fw-extrabold: 800;
+
+// Utility classes & functions start
+.attribution {
+  position: static;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  padding: 1rem 0 1rem 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: hsla(230, 8%, 15%, 0.8);
+
+  a {
+    color: hsla(230, 8%, 15%, 0.6);
+    transition: 0.2s ease;
+    text-decoration: underline;
+  }
+
+  a:hover,
+  a:active {
+    color: hsla(230, 8%, 15%, 0.4);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fade-in 1.5s;
+  -webkit-animation: fade-in 1.5s;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@function hslac($color, $alpha) {
+  @if (type-of($color) == "color") {
+    @return hsla(hue($color), saturation($color), lightness($color), $alpha);
+  } @else {
+    @error "You didn't pass a color object";
+  }
+}
+
+// Utility classes & functions end
+
+body {
+  font-family: $ff-primary;
+  font-size: $fs-primary;
+  font-weight: $fw-medium;
+  position: relative;
+}
+
+.wrapper {
+  padding: 1.4rem 1rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.heading-primary {
+  font-size: 1.25rem;
+  display: flex;
+  align-items: start;
+}
+
+.notifications-count {
+  background-color: $clr-primary-blue;
+  color: $clr-neutral-100;
+  font-size: 1rem;
+  font-weight: $fw-medium;
+  margin-top: .1rem;
+  margin-left: .6rem;
+  padding-inline: .7rem;
+  padding-bottom: .1rem;
+  border-radius: .4rem;
+}
+
+.btn-read-all {
+  color: $clr-neutral-600;
+  border: none;
+  background: none;
+  font-size: .875rem;
+}
+
+.notifications {
+  padding: 0;
+  margin-top: 1.2rem;
+  display: grid;
+  gap: .575rem;
+}
+
+.notification {
+  padding: 1rem;
+  display: flex;
+  border-radius: .6rem;
+  transition: background-color .25s ease;
+
+  &__profile-picture {
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  &__info {
+    margin-left: .75rem;
+    font-size: .875rem;
+    line-height: 1.3;
+    flex-grow: 1;
+    color: $clr-neutral-600;
+  }
+  &__username {
+    color: $clr-neutral-700;
+    font-weight: $fw-extrabold;
+    margin-right: .2rem;
+  }
+  &__post-name {
+    color: $clr-neutral-600;
+    font-weight: $fw-extrabold;
+    margin-left: .2rem;
+  }
+  &__group-name {
+    color: $clr-primary-blue;
+    font-weight: $fw-extrabold;
+    margin-left: .2rem;
+  }
+  &__timestamp {
+    color: $clr-neutral-500;
+    display: block;
+    margin-top: .2rem;
+  }
+  &[data-read="false"] {
+    background-color: $clr-neutral-200;
+
+    .notification__text::after {
+      content: "";
+      display: inline-block;
+      width: .5rem;
+      height: .5rem;
+      margin-left: .2rem;
+      border-radius: 50%;
+      background-color: $clr-primary-red;
+    }
+  }
+  &__text {
+    margin-right: .7rem;
+  }
+  &__message {
+    margin-top: 0.7rem;
+    border: .1rem solid $clr-neutral-300;
+    padding: .9rem;
+    border-radius: .3rem;
+  }
+  &__image {
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+@media only screen and (min-width: 40em) {
+  @mixin link-hover {
+    transition: color .05s ease;
+    &:hover,
+    &:focus-visible {
+      color: hslac($clr-primary-blue, .8);
+    }
+  }
+  body {
+    display: grid;
+    place-items: center;
+    background: $clr-neutral-200;
+  }
+  .wrapper {
+    max-width: 45.625rem;
+    padding: 2rem 2rem 0;
+    margin-top: -2.2rem;
+    border-radius: 1rem;
+    background: $clr-neutral-100;
+    box-shadow: rgba(149, 157, 165, 0.1) 0 .5rem 1.5rem;
+  }
+  .heading-primary {
+    font-size: 1.5rem;
+    align-items: center;
+  }
+  .notifications-count {
+    margin-left: .8rem;
+  }
+  .btn-read-all {
+    @include link-hover;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-right: -.4rem;
+  }
+  .notifications {
+    margin-top: 1.7rem;
+    margin-bottom: 0;
+    gap: .5rem;
+  }
+  .notification {
+    padding: 1.1rem;
+    &__profile-picture {
+      width: 2.8125rem;
+      height: 2.8125rem;
+    }
+    &__info {
+      font-size: 1rem;
+      margin-left: 1.3rem;
+      //line-height: 1;
+    }
+    &__message {
+      padding: 1rem 1.1rem 1rem;
+      margin-bottom: .275rem;
+      cursor: pointer;
+      transition: background-color .15s ease-in;
+
+      &:hover,
+      &:focus-visible {
+        background-color: $clr-neutral-300;
+      }
+    }
+    &__image {
+      width: 2.8125rem;
+      height: 2.8125rem;
+      border-radius: .5rem;
+      cursor: pointer;
+
+      &:hover,
+      &:focus-visible {
+        outline: .25rem solid $clr-neutral-300;
+      }
+    }
+    &__post-name,
+    &__group-name,
+    &__username {
+      @include link-hover
+    }
+  }
+
+  .attribution {
+    position: absolute;
+  }
+}

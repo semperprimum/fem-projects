@@ -1,0 +1,245 @@
+.attribution {
+  position: static;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  margin: 0rem 0 1rem 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+.attribution a {
+  color: rgba(255, 255, 255, 0.6);
+  transition: 0.2s ease;
+  text-decoration: underline;
+}
+.attribution a:hover,
+.attribution a:active {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fade-in {
+  animation: fade-in 1.5s;
+  -webkit-animation: fade-in 1.5s;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #fff;
+  min-height: 100vh;
+  position: relative;
+  background-image: url("./images/bg-mobile.svg");
+  background-color: #674baf;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+main {
+  margin: 2rem 2.25rem 1rem;
+}
+
+.logo-wrapper {
+  margin: 2rem 2.25rem 3.45rem;
+}
+
+.logo {
+  max-width: 7.85rem;
+  height: 50%;
+}
+
+.illustration-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3.65rem;
+}
+
+.illustration {
+  width: 100%;
+  max-width: 25rem;
+  height: 50%;
+}
+
+.text-group {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.text-group__heading {
+  margin-bottom: 0.9rem;
+}
+.text-group__body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.btn {
+  background-color: #fff;
+  font-size: 0.75rem;
+  color: #674baf;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  width: 65%;
+  padding: 0.75rem 0.5rem;
+  border: none;
+  border-radius: 100vh;
+  cursor: pointer;
+  margin-top: 1.45rem;
+}
+
+.socials {
+  margin-top: 3.8rem;
+}
+.socials__list {
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+}
+.socials__item {
+  width: 1.7rem;
+  height: 1.7rem;
+}
+.socials__link {
+  border-radius: 50%;
+  border: 1px solid #fff;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+.socials__link svg {
+  max-width: 15px;
+  max-height: 15px;
+  fill: #fff;
+}
+
+@media only screen and (min-width: 50em) {
+  body {
+    background-image: url("./images/bg-desktop.svg");
+    background-position: left top;
+    background-size: cover;
+    display: grid;
+    place-items: center;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: 54.7% 45.3%;
+    gap: 0;
+    height: 100%;
+    margin: 1rem 4.5rem;
+  }
+
+  .illustration-wrapper {
+    margin-bottom: 0;
+    margin-top: 4rem;
+    place-self: start;
+  }
+
+  .illustration {
+    max-width: 45rem;
+    height: 100%;
+  }
+
+  .logo-wrapper {
+    margin: 3.35rem 4.5rem 0.7rem;
+    place-self: start;
+  }
+
+  .logo {
+    height: 100%;
+    max-width: 13.25rem;
+  }
+
+  .text-group {
+    text-align: start;
+    padding: 2.7rem 1rem 0 3.1rem;
+  }
+  .text-group__heading {
+    margin-bottom: 1.2rem;
+  }
+  .text-group__body {
+    margin-bottom: 1.25rem;
+  }
+
+  .btn {
+    margin-top: 0.35rem;
+    font-size: 1.125rem;
+    padding: 0.85rem;
+    max-width: 12.5rem;
+    box-shadow: #26394d 0px 10px 10px -5px;
+    transition: all 0.25s cubic-bezier(0, 0.52, 0.02, 1);
+  }
+  .btn:hover,
+  .btn:focus-visible {
+    color: #fff;
+    background-color: #e882e8;
+  }
+
+  .socials {
+    position: absolute;
+    right: 5.1rem;
+    bottom: 2.45rem;
+  }
+  .socials__list {
+    gap: 0.85rem;
+    margin: 0;
+  }
+  .socials__item {
+    width: 2.6rem;
+    height: 2.6rem;
+  }
+  .socials__link {
+    transition: all 0.25s cubic-bezier(0, 0.52, 0.02, 1);
+  }
+  .socials__link:hover,
+  .socials__link:focus-visible {
+    border: 1px solid hotpink;
+  }
+  .socials__link:hover svg,
+  .socials__link:focus-visible svg {
+    fill: hotpink;
+  }
+  .attribution {
+    position: absolute;
+  }
+}
+@media only screen and (min-width: 75rem) {
+  .text-group {
+    font-size: 1.25rem;
+  }
+  .text-group__body {
+    font-size: 1.125rem;
+  }
+
+  .illustration-wrapper {
+    margin-top: 0;
+  }
+}
+@media only screen and (min-width: 89em) {
+  body {
+    background-size: contain;
+  }
+}

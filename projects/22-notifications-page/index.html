@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <!--  Reset CSS file-->
+    <link rel="stylesheet" href="reset.css">
+    <!--  Main CSS file-->
+    <link rel="stylesheet" href="style.css">
+    <!--    Main JS file-->
+    <script src="main.js" defer></script>
+    <title>Frontend Mentor | Notifications page</title>
+</head>
+<body>
+
+<div class="wrapper fade-in">
+    <header>
+        <h1 class="heading-primary">Notifications <span id="notification-counter" class="notifications-count">0</span>
+        </h1>
+        <button class="btn-read-all">Mark all as read</button>
+    </header>
+
+    <main>
+        <ul class="notifications" role="list">
+            <li class="notification" data-read="false" role="listitem">
+                <div class="notification__profile-picture">
+                    <img src="./assets/images/avatar-mark-webber.webp" alt="Profile picture of Mark Webber">
+                </div>
+                <div class="notification__info">
+                    <p class="notification__text">
+                        <a class="notification__username" href="#">Mark Webber</a>
+                        reacted to your recent post
+                        <a class="notification__post-name" href="#">My first tournament today!</a>
+                    </p>
+                    <span class="notification__timestamp">1m ago</span>
+                </div>
+            </li>
+            <li class="notification" data-read="false" role="listitem">
+                <div class="notification__profile-picture">
+                    <img src="./assets/images/avatar-angela-gray.webp" alt="Profile picture of Angela Gray">
+                </div>
+                <div class="notification__info">
+                    <p class="notification__text">
+                        <a class="notification__username" href="#">Angela Gray</a>
+                        followed you
+                    </p>
+                    <span class="notification__timestamp">5m ago</span>
+                </div>
+            </li>
+            <li class="notification" data-read="false" role="listitem">
+                <div class="notification__profile-picture">
+                    <img src="./assets/images/avatar-jacob-thompson.webp" alt="Profile picture of Jacob Thompson">
+                </div>
+                <div class="notification__info">
+                    <p class="notification__text">
+                        <a class="notification__username" href="#">Jacob Thompson</a>
+                        has joined your group
+                        <a class="notification__group-name" href="#">Chess Club</a>
+                    </p>
+                    <span class="notification__timestamp">1 day ago</span>
+                </div>
+            </li>
+            <li class="notification" data-read="true" role="listitem">
+                <div class="notification__profile-picture">
+                    <img src="./assets/images/avatar-rizky-hasanuddin.webp" alt="Profile picture of Rizky Hasanuddin">
+                </div>
+                <div class="notification__info">
+                    <p class="notification__text">
+                        <a class="notification__username" href="#">Rizky Hasanuddin</a>
+                        sent you a private message
+                    </p>
+                    <span class="notification__timestamp">5 days ago</span>
+                    <p class="notification__message">
+                        Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm
+                        already having lots of fun and improving my game.
+                    </p>
+                </div>
+            </li>
+            <li class="notification" data-read="true" role="listitem">
+                <div class="notification__profile-picture">
+                    <img src="./assets/images/avatar-kimberly-smith.webp" alt="Profile picture of Kimberly Smith">
+                </div>
+                <div class="notification__info">
+                    <p class="notification__text">
+                        <a class="notification__username" href="#">Kimberly Smith</a>
+                        commented on your picture
+                    </p>
+                    <span class="notification__timestamp">1 week ago</span>
+                </div>
+                <div class="notification__image">
+                    <a aria-label="link to your picture" href="#"><img src="./assets/images/image-chess.webp" alt=""></a>
+                </div>
+            </li>
+            <li class="notification" data-read="true" role="listitem">
+                <div class="notification__profile-picture">
+                    <img src="./assets/images/avatar-nathan-peterson.webp" alt="Profile picture of Nathan Peterson">
+                </div>
+                <div class="notification__info">
+                    <p class="notification__text">
+                        <a class="notification__username" href="#">Nathan Peterson</a>
+                        reacted to your recent post
+                        <a class="notification__post-name" href="#">5 end-game strategies to increase your win rate</a>
+                    </p>
+                    <span class="notification__timestamp">2 weeks ago</span>
+                </div>
+            </li>
+            <li class="notification" data-read="true" role="listitem">
+                <div class="notification__profile-picture">
+                    <img src="./assets/images/avatar-anna-kim.webp" alt="Profile picture of Anna Kim">
+                </div>
+                <div class="notification__info">
+                    <p class="notification__text">
+                        <a class="notification__username" href="#">Anna Kim</a>
+                        left the group
+                        <a class="notification__group-name" href="#">Chess Club</a>
+                    </p>
+                    <span class="notification__timestamp">2 weeks ago</span>
+                </div>
+            </li>
+        </ul>
+    </main>
+
+</div>
+<footer class="attribution fade-in">
+    Challenge by
+    <a
+            class="attribution__link"
+            href="https://www.frontendmentor.io/challenges/news-homepage-H6SWTa1MFl"
+            target="_blank"
+    >Frontend Mentor</a
+    >, Coded by
+    <a
+            class="attribution__link"
+            href="https://github.com/semperprimum"
+            target="_blank"
+            rel="noopener noreferrer"
+    >semperprimum</a
+    >
+</footer>
+
+</body>
+</html>

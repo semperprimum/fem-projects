@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Main JS file -->
+    <script src="./main.js" type="module" defer></script>
+    <!-- Reset CSS file -->
+    <link rel="stylesheet" href="./reset.css" />
+    <!-- Main CSS file -->
+    <link rel="stylesheet" href="./style.css" />
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+  </head>
+  <body>
+    <main class="fade-in">
+      <section class="signup-wrapper">
+        <picture class="img-wrapper">
+          <source
+            media="(min-width: 40em)"
+            srcset="./assets/images/illustration-sign-up-desktop.svg"
+          />
+          <img
+            class="img-wrapper__image"
+            src="./assets/images/illustration-sign-up-mobile.svg"
+            alt=""
+          />
+        </picture>
+        <div class="content">
+          <h1 class="content__heading">Stay updated!</h1>
+          <p class="content__body">
+            Join 60,000+ product managers receiving monthly updates on:
+          </p>
+          <ul class="content__list" role="list">
+            <li role="listitem">
+              <p>Product discovery and building what matters</p>
+            </li>
+            <li role="listitem">
+              <p>Measuring to ensure updates are a success</p>
+            </li>
+            <li role="listitem">
+              <p>And much more!</p>
+            </li>
+          </ul>
+          <form class="form">
+            <div
+              class="form__input-wrapper"
+              data-error-text="Valid email required"
+            >
+              <label class="form__input-wrapper__label" for="email-input"
+                >Email address</label
+              >
+              <input
+                class="form__input-wrapper__input"
+                id="email-input"
+                type="text"
+                placeholder="email@company.com"
+              />
+            </div>
+            <button class="btn">Subscribe to monthly newsletter</button>
+          </form>
+        </div>
+      </section>
+      <div class="success-page hidden" aria-live="polite">
+        <img
+          class="success-page__icon"
+          src="./assets/images/icon-success.svg"
+          alt=""
+        />
+        <h1 class="success-page__heading">Thanks for subscribing!</h1>
+        <p class="success-page__body">
+          A confirmation email has been sent to
+          <span id="email-span">ash@loremcompany.com</span>. Please open it and
+          click the button inside to confirm your subscription.
+        </p>
+        <button class="btn btn--dismiss">Dismiss message</button>
+      </div>
+    </main>
+
+    <footer class="attribution fade-in">
+      Challenge by
+      <a
+        class="attribution__link"
+        href="https://www.frontendmentor.io/challenges/intro-component-with-signup-form-5cf91bd49edda32581d28fd1"
+        target="_blank"
+        >Frontend Mentor</a
+      >, Coded by
+      <a
+        class="attribution__link"
+        href="https://github.com/semperprimum"
+        target="_blank"
+        rel="noopener noreferrer"
+        >semperprimum</a
+      >
+    </footer>
+  </body>
+</html>
+
+<!-- 
+Stay updated!
+
+Join 60,000+ product managers receiving monthly updates on:
+
+Product discovery and building what matters
+Measuring to ensure updates are a success
+And much more!
+
+Email address
+email@company.com
+
+Subscribe to monthly newsletter
+-->
+
+<!-- 
+Thanks for subscribing!
+
+A confirmation email has been sent to ash@loremcompany.com. 
+Please open it and click the button inside to confirm your subscription.
+
+Dismiss message 
+-->

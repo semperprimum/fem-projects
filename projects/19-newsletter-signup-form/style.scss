@@ -1,0 +1,316 @@
+// Variables
+$clr-primary: hsl(4, 100%, 67%);
+
+$clr-neutral-900: hsl(234, 29%, 20%);
+$clr-neutral-800: hsl(235, 18%, 26%);
+$clr-neutral-700: hsl(231, 7%, 60%);
+$clr-neutral-600: hsl(0, 0%, 100%);
+
+$ff-primary: "Roboto", sans-serif;
+
+$fw-regular: 400;
+$fw-bold: 700;
+
+$btn-gradient: linear-gradient(
+  90deg,
+  hsl(234, 29%, 20%) 0%,
+  hsl(234, 29%, 20%) 50%,
+  hsl(342, 100%, 64%) 85%,
+  hsl(15, 100%, 61%) 100%
+);
+
+// Utility classes & functions start
+.attribution {
+  position: staic;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  margin: 2rem 0 1rem 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: hsla(230, 8%, 15%, 0.8);
+
+  a {
+    color: hsla(230, 8%, 15%, 0.6);
+    transition: 0.2s ease;
+    text-decoration: underline;
+  }
+
+  a:hover,
+  a:active {
+    color: hsla(230, 8%, 15%, 0.4);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fade-in 1.5s;
+  -webkit-animation: fade-in 1.5s;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@function hslac($color, $alpha) {
+  @if (type-of($color) == "color") {
+    @return hsla(hue($color), saturation($color), lightness($color), $alpha);
+  } @else {
+    @error "You didn't pass a color object";
+  }
+}
+// Utility classes & functions end
+
+body {
+  position: relative;
+  font-family: $ff-primary;
+  color: $clr-neutral-900;
+  font-weight: $fw-regular;
+}
+
+.img-wrapper {
+  &__image {
+    width: 100%;
+  }
+}
+
+.content {
+  padding: 1.875rem 1.5rem;
+
+  &__heading {
+    font-size: 2.5rem;
+    margin-bottom: 0.875rem;
+  }
+  &__list {
+    margin-top: 1.5rem;
+    margin-left: 2.3rem;
+    line-height: 1.5;
+
+    li {
+      position: relative;
+      margin-bottom: 0.6rem;
+
+      &::before {
+        content: url("./assets/images/icon-list.svg");
+        position: absolute;
+        left: -2.3rem;
+        top: 0.1rem;
+        alt: none;
+      }
+    }
+  }
+}
+
+.form {
+  margin-top: 2.5rem;
+
+  &__input-wrapper {
+    position: relative;
+    &.error {
+      .form__input-wrapper__input {
+        border: 1px solid $clr-primary;
+        background-color: hslac($clr-primary, 0.15);
+        color: $clr-primary;
+      }
+
+      &::after {
+        content: attr(data-error-text);
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 0.75rem;
+        color: $clr-primary;
+        font-weight: $fw-bold;
+      }
+    }
+
+    &__label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: $fw-bold;
+    }
+    &__input {
+      margin-top: 0.6rem;
+      width: 100%;
+      padding: 0.9rem 1.4rem;
+      border-radius: 0.5rem;
+      border: 1px solid hslac($clr-neutral-700, 0.5);
+      background-color: $clr-neutral-600;
+      color: $clr-neutral-800;
+      outline: none;
+
+      &:focus-visible {
+        border: 1px solid $clr-neutral-900;
+      }
+    }
+  }
+}
+
+.btn {
+  font-family: $ff-primary;
+  font-weight: $fw-bold;
+  margin-top: 1.6rem;
+  color: $clr-neutral-600;
+  background-color: $clr-neutral-900;
+  line-height: 2.3;
+  border: none;
+  border-radius: 0.5rem;
+  width: 100%;
+  padding: 0.6rem 0.3rem;
+}
+
+.success-page {
+  padding: 9.3rem 1.5rem 0;
+
+  &__heading {
+    font-size: 2.5rem;
+    margin-top: 2.5rem;
+    line-height: 1;
+  }
+  &__body {
+    margin-top: 1.5rem;
+    flex-grow: 1;
+
+    span {
+      font-weight: $fw-bold;
+    }
+  }
+
+  .btn {
+    margin-top: 16.5rem;
+  }
+}
+
+@keyframes slideInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-100vh);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Media queries
+@media only screen and (min-width: 40em) {
+  body {
+    display: grid;
+    place-items: center;
+    background: $clr-neutral-800;
+  }
+  .signup-wrapper {
+    max-width: 58.125rem;
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: minmax(15rem, 31.56rem) minmax(13rem, 26.56rem);
+    background: $clr-neutral-600;
+    border-radius: 2.2rem;
+  }
+  .content {
+    grid-row: 1;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    &__heading {
+      font-size: 2.3rem;
+      margin-bottom: 0.625rem;
+    }
+    &__body {
+      font-size: 0.85rem;
+    }
+    &__list {
+      font-size: 0.85rem;
+    }
+  }
+  .img-wrapper {
+    padding: 1.5rem 1.5rem 1.5rem 0;
+    grid-column: 2 / 3;
+    display: flex;
+  }
+  .btn {
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: box-shadow 0.15s ease, background-position 0.55s ease-out;
+    background-image: $btn-gradient;
+    background-size: 500%;
+    background-position: left;
+
+    &:hover,
+    &:focus-visible {
+      background-position: right;
+      box-shadow: hsl(15, 100%, 61%, 0.2) 0px 1.3rem 2.375rem,
+        hsl(15, 100%, 61%, 0.12) 0px 1.05rem 0.75rem;
+    }
+  }
+
+  .success-page {
+    padding: 3rem 3.875rem 4rem;
+    max-width: 31.25rem;
+    background: $clr-neutral-600;
+    border-radius: 2rem;
+    animation: slideInTop 0.5s;
+
+    &__heading {
+      font-size: 3.5rem;
+    }
+
+    .btn {
+      margin-top: 2.5rem;
+    }
+  }
+  .attribution {
+    position: absolute;
+    color: hsla(230, 8%, 100%, 0.8);
+    a {
+      color: hsla(230, 8%, 100%, 0.6);
+    }
+    a:hover,
+    a:active {
+      color: hsla(230, 8%, 100%, 0.4);
+    }
+  }
+}
+
+@media only screen and (min-width: 58.5em) {
+  .content {
+    padding: 5.125rem 4.05rem;
+    display: block;
+
+    &__heading {
+      font-size: 3.5rem;
+    }
+    &__body {
+      font-size: 1rem;
+    }
+    &__list {
+      font-size: 1rem;
+    }
+  }
+  .btn {
+    font-size: 1rem;
+  }
+}
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,259 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+ul[role=list],
+ol[role=list] {
+    list-style-type: none;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+.attribution {
+    visibility: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin: 2rem 0 1rem 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: white;
+}
+.attribution a {
+    color: rgba(255, 255, 255, 0.6);
+    transition: 0.2s ease;
+    text-decoration: underline;
+}
+.attribution a:hover,
+.attribution a:active {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.fade-in {
+    animation: fade-in 1.5s;
+    -webkit-animation: fade-in 1.5s;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: #fff;
+    background-color: #ff7a7a;
+    background-image: url("./images/bg-intro-mobile.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+}
+
+main {
+    margin: 5.7rem 1.5rem;
+    display: grid;
+    gap: 4rem;
+}
+
+.text-group {
+    text-align: center;
+    display: grid;
+    gap: 1.55rem;
+}
+.text-group .heading-primary {
+    font-size: 1.7rem;
+    line-height: 1.3;
+}
+.text-group .paragraph-primary {
+    line-height: 1.6;
+}
+
+.trial {
+    text-align: center;
+    font-weight: 500;
+    color: #b9b6d3;
+    border: 0;
+    background: #6055a5;
+    line-height: 1.65;
+    width: 100%;
+    font-size: 1rem;
+    border-radius: 0.65rem;
+    padding: 1.1rem 3rem;
+    box-shadow: 0 0.5rem 0 rgba(62, 60, 73, 0.2);
+}
+.trial strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+.form-section {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.form-wrapper {
+    padding: 1.5rem 1.5rem;
+    display: grid;
+    background: #fff;
+    border-radius: 0.65rem;
+    box-shadow: 0 0.5rem 0 rgba(62, 60, 73, 0.3);
+}
+.form-wrapper .input-wrapper {
+    position: relative;
+    display: grid;
+}
+.form-wrapper .input-wrapper input {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    width: 100%;
+    padding: 1rem 3rem 1rem 1.25rem;
+    border: 1px solid rgba(185, 182, 211, 0.5);
+    border-radius: 0.3rem;
+}
+.form-wrapper .input-wrapper input::placeholder {
+    color: #3e3c49;
+    font-weight: 700;
+}
+.form-wrapper .input-wrapper.error-active:after {
+    content: url("./images/icon-error.svg");
+    position: absolute;
+    top: 50%;
+    transform: translateY(-80%);
+    right: 1rem;
+}
+.form-wrapper .input-wrapper.error-active input {
+    border: 1px solid #ff7a7a;
+}
+.form-wrapper .input-wrapper .error {
+    color: #ff7a7a;
+    font-size: 0.7rem;
+    margin-top: 0.5rem;
+    justify-self: end;
+}
+.form-wrapper form {
+    display: grid;
+    gap: 1.1rem;
+}
+
+.btn__submit {
+    font-family: "Poppins", sans-serif;
+    padding: 0.8rem 1rem 0.4rem 1.1rem;
+    background: #38cc8c;
+    border: 0;
+    line-height: 2;
+    border-radius: 0.35rem;
+    color: #ffff;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.04rem;
+    border-bottom: 0.3rem solid rgba(0, 0, 0, 0.1);
+    margin-bottom: -0.3rem;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+.btn__submit:hover, .btn__submit:focus-visible {
+    background: rgba(56, 204, 140, 0.7);
+}
+
+.tos {
+    color: #b9b6d3;
+    text-align: center;
+    margin-inline: 1rem;
+    font-size: 0.7rem;
+    line-height: 1.2rem;
+    margin-top: 1rem;
+}
+.tos a {
+    font-weight: 700;
+    color: #ff7a7a;
+}
+.tos a:hover, .tos a:focus-visible {
+    text-decoration: underline;
+}
+
+@media (min-width: 45em) {
+    body {
+        display: grid;
+        place-items: center;
+        background-image: url("./images/bg-intro-desktop.png");
+        background-repeat: repeat;
+    }
+
+    main {
+        margin: 1rem;
+        grid-template-columns: 1fr 1fr;
+        max-width: 68.75rem;
+        gap: 1.75rem;
+    }
+
+    .text-group {
+        place-self: center;
+        text-align: start;
+        gap: 2rem;
+    }
+    .text-group .heading-primary {
+        font-size: 3rem;
+        line-height: 1.15;
+    }
+
+    .form-section {
+        max-width: 33.75rem;
+    }
+
+    .form-wrapper {
+        padding: 2.75rem 2.5rem;
+    }
+    .form-wrapper form {
+        gap: 0.75rem;
+    }
+    .form-wrapper form .input-wrapper input {
+        padding: 1rem 3rem 1rem 2rem;
+    }
+
+    .trial {
+        font-size: 0.95rem;
+    }
+
+    .attribution {
+        visibility: visible;
+    }
+}

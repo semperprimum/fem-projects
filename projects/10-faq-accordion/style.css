@@ -1,0 +1,257 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+ul[role=list],
+ol[role=list] {
+    list-style-type: none;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    color: #1d1e35;
+    font-size: 0.75rem;
+    font-weight: 400;
+    font-family: "Kumbh Sans", sans-serif;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(0deg, #6565e7, #af67e9);
+}
+
+main {
+    margin: 6rem 1.56rem 0 1.56rem;
+    background: white;
+    border-radius: 1.5rem;
+    box-shadow: 0 2rem 5rem -1rem rgba(29, 30, 53, 0.5);
+}
+
+.section__illustration {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.section__illustration > * {
+    max-width: 15rem;
+}
+
+.illustration {
+    margin-top: -6.7rem;
+    margin-inline: auto;
+}
+
+.bg-pattern {
+    margin-top: -4.5rem;
+    margin-inline: auto;
+}
+
+.section__faq {
+    padding: 2rem 1.5rem 3rem 1.5rem;
+}
+
+.primary-heading {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+}
+
+.answer {
+    color: #787887;
+    max-height: 0;
+    opacity: 0;
+    transition: 200ms ease;
+}
+
+.faq-list li {
+    padding: 1rem 0;
+    border-bottom: 1px solid #e7e7e9;
+}
+.faq-list li.active .answer {
+    max-height: 10rem;
+    opacity: 1;
+    margin-top: 0.8rem;
+}
+.faq-list li.active .question {
+    font-weight: 700;
+    color: #1d1e35;
+}
+.faq-list li.active .question:before {
+    rotate: 180deg;
+    transform: translateY(50%);
+}
+
+.question {
+    position: relative;
+    cursor: pointer;
+    color: #787887;
+    font-size: 0.83rem;
+}
+
+.question:hover {
+    color: #f47c57;
+}
+
+.question:before {
+    content: url("./images/icon-arrow-down.svg");
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.illustration-desktop {
+    display: none;
+}
+
+.box {
+    display: none;
+}
+
+.illustration-mobile {
+    display: block;
+}
+
+@media (min-width: 40rem) {
+    main {
+        margin: 0 1rem;
+        position: relative;
+        max-width: 57.5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .primary-heading {
+        text-align: start;
+    }
+
+    .section__faq {
+        padding: 0;
+    }
+
+    .section__illustration > * {
+        max-width: none;
+    }
+
+    .section__illustration {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .box {
+        display: block;
+        position: absolute;
+        top: 59%;
+        transform: translateY(-50%);
+        z-index: 500;
+        left: -5.8rem;
+    }
+
+    .overflow-hidden {
+        overflow: hidden;
+    }
+
+    .section__faq {
+        padding: 5rem 6.25rem 5rem 2rem;
+    }
+
+    .illustration {
+        position: absolute;
+        top: 50%;
+        left: -5rem;
+        transform: translateY(-50%);
+        margin-top: 0;
+    }
+
+    .bg-pattern {
+        margin-top: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-58%);
+        left: -35.7rem;
+    }
+
+    .question {
+        font-size: 0.9rem;
+    }
+
+    .answer {
+        padding-right: 0.75rem;
+    }
+
+    .illustration-desktop {
+        display: block;
+    }
+
+    .illustration-mobile {
+        display: none;
+    }
+}
+.attribution {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin: 2rem 0 1rem 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #e3e4e8;
+}
+.attribution a {
+    color: rgba(227, 228, 232, 0.6);
+    transition: 0.2s ease;
+    text-decoration: underline;
+}
+.attribution a:hover,
+.attribution a:active {
+    color: rgba(227, 228, 232, 0.4);
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.fade-in {
+    animation: fade-in 1.5s;
+    -webkit-animation: fade-in 1.5s;
+}

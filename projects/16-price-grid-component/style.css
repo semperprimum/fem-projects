@@ -1,0 +1,222 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+ul[role=list],
+ol[role=list] {
+    list-style-type: none;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+.attribution {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: 0 0 1rem 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #232429;
+}
+.attribution a {
+    color: rgba(35, 36, 41, 0.6);
+    transition: 0.2s ease;
+    text-decoration: underline;
+}
+.attribution a:hover,
+.attribution a:active {
+    color: rgba(35, 36, 41, 0.4);
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.fade-in {
+    animation: fade-in 1.5s;
+    -webkit-animation: fade-in 1.5s;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+body {
+    font-family: "Karla", sans-serif;
+    background-color: #e5eff5;
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 1rem;
+}
+
+main {
+    margin: 4.375rem 1.875rem;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    box-shadow: rgba(50, 50, 93, 0.1) 0 1.875rem 3.75rem -0.75rem, rgba(0, 0, 0, 0.15) 0 1.125rem 2.25rem -1.125rem;
+}
+
+.card-description {
+    padding: 2rem 1.7rem;
+    background-color: #fff;
+}
+.card-description__heading {
+    font-size: 1.2rem;
+    margin-bottom: 1.35rem;
+    color: #2ab2af;
+}
+
+.money-back {
+    font-size: 0.9rem;
+    color: #c0df34;
+}
+
+.paragraph-primary {
+    color: rgba(152, 166, 189, 0.7);
+    font-size: 0.85rem;
+    margin-top: 1.2rem;
+    line-height: 1.9;
+}
+
+.card-subscription {
+    background-color: #2ab2af;
+    padding: 1.5rem;
+}
+.card-subscription__heading {
+    font-size: 1.1rem;
+    color: #e5eff5;
+    margin-bottom: 1.05rem;
+}
+
+.price {
+    font-size: 2rem;
+    color: #e5eff5;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 0.4rem;
+}
+.price span {
+    font-size: 1rem;
+    color: rgba(229, 239, 245, 0.5);
+    font-weight: 400;
+}
+
+.paragraph-secondary {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.btn {
+    font-family: "Karla", sans-serif;
+    margin-top: 1.75rem;
+    width: 100%;
+    font-weight: 700;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.75);
+    background-color: #c0df34;
+    border: none;
+    padding: 0.9rem;
+    border-radius: 0.35rem;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0.25rem 0.75rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+.btn:hover, .btn:focus-visible {
+    scale: 1.05;
+    background-color: rgba(192, 223, 52, 0.9);
+}
+
+.card-why-us {
+    padding: 1.7rem;
+    background-color: rgba(42, 178, 175, 0.8);
+}
+.card-why-us__heading {
+    color: #e5eff5;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.advantages-list {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+    line-height: 1.45;
+}
+
+@media only screen and (min-width: 30em) {
+    body {
+        display: grid;
+        place-items: center;
+    }
+
+    main {
+        max-width: 39.6875em;
+        margin: 1rem;
+    }
+
+    .cards-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .card-description {
+        padding: 2.5rem 2.45rem 2.5rem;
+    }
+    .card-description__heading {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .money-back {
+        font-size: 1.1rem;
+    }
+
+    .paragraph-primary {
+        font-size: 0.98rem;
+        margin-top: 0.5rem;
+        line-height: 1.75;
+    }
+
+    .card-subscription {
+        font-size: 1rem;
+        padding: 2.5rem;
+    }
+
+    .card-why-us {
+        padding: 2.5rem;
+    }
+}

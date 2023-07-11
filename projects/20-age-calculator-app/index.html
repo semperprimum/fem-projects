@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <!-- Reset CSS file -->
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <!-- Main CSS file -->
+    <link rel="stylesheet" href="./styles/style.css" />
+    <!-- Main JS file -->
+    <script src="main.js" defer></script>
+    <title>Frontend Mentor | Age calculator app</title>
+  </head>
+  <body>
+    <main class="fade-in">
+      <h1 class="sr-only">Age calculator app</h1>
+      <form>
+        <div class="input-group">
+          <div class="input-control">
+            <label for="day-input" class="input-control__label">day</label>
+            <input
+              id="day-input"
+              class="input-control__input"
+              type="text"
+              placeholder="DD"
+            />
+            <p class="input-control__error"></p>
+          </div>
+          <div class="input-control">
+            <label for="month-input" class="input-control__label">month</label>
+            <input
+              id="month-input"
+              class="input-control__input"
+              type="text"
+              placeholder="MM"
+            />
+            <p class="input-control__error"></p>
+          </div>
+          <div class="input-control">
+            <label for="year-input" class="input-control__label">year</label>
+            <input
+              id="year-input"
+              class="input-control__input"
+              type="text"
+              placeholder="YYYY"
+            />
+            <p class="input-control__error"></p>
+          </div>
+        </div>
+        <div class="btn-wrapper">
+          <button class="submit-btn" aria-label="calculate age">
+            <svg aria-hidden="true" class="submit-btn__icon" xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44"><path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/></svg>
+          </button>
+        </div>
+      </form>
+      <ul class="answers-list" role="list">
+        <li role="listitem">
+          <strong
+            ><span class="answer-number" id="years-span">--</span> years</strong
+          >
+        </li>
+        <li role="listitem">
+          <strong
+            ><span class="answer-number" id="months-span">--</span>
+            months</strong
+          >
+        </li>
+        <li role="listitem">
+          <strong
+            ><span class="answer-number" id="days-span">--</span> days</strong
+          >
+        </li>
+      </ul>
+    </main>
+    <footer class="attribution fade-in">
+      Challenge by
+      <a
+              class="attribution__link"
+              href="https://www.frontendmentor.io/challenges/intro-component-with-signup-form-5cf91bd49edda32581d28fd1"
+              target="_blank"
+      >Frontend Mentor</a
+      >, Coded by
+      <a
+              class="attribution__link"
+              href="https://github.com/semperprimum"
+              target="_blank"
+              rel="noopener noreferrer"
+      >semperprimum</a
+      >
+    </footer>
+  </body>
+</html>

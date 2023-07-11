@@ -1,0 +1,170 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    font-family: "Lexend Deca", sans-serif;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.9375rem;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background: #f2f2f2;
+}
+
+main {
+    display: block;
+    margin: 5.625rem 1.55rem;
+    overflow: hidden;
+    border-radius: 0.2rem;
+}
+
+.card-container {
+    padding: 3.125rem;
+    background-color: #004241;
+}
+
+.card {
+    padding: 3.125rem;
+    display: grid;
+    gap: 1.8rem;
+}
+
+.card[data-card-type=accent-1] {
+    background: #e38826;
+}
+
+.card[data-card-type=accent-2] {
+    background: #006970;
+}
+
+.card[data-card-type=accent-3] {
+    background: #004241;
+}
+
+.card-heading {
+    font-family: "Big Shoulders Display", cursive;
+    font-size: 2.45rem;
+    color: #f2f2f2;
+    text-transform: uppercase;
+}
+
+.card-paragraph {
+    line-height: 1.5rem;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.button[data-button-type=accent-1] {
+    color: #e38826;
+}
+
+.button[data-button-type=accent-2] {
+    color: #006970;
+}
+
+.button[data-button-type=accent-3] {
+    color: #004241;
+}
+
+.button {
+    justify-self: start;
+    padding: 0.9rem 1.875rem;
+    border: 0;
+    border-radius: 100vw;
+    font-size: 1rem;
+    background-color: #f2f2f2;
+    transition: color 0.2s, background-color 0.2s, outline 0.2s;
+}
+.button:hover {
+    background-color: transparent;
+    color: #f2f2f2;
+    outline: solid 2px #f2f2f2;
+    outline-offset: -2px;
+    cursor: pointer;
+}
+
+@media (min-width: 50rem) {
+    main {
+        max-width: 57.5rem;
+        display: grid;
+        place-items: center;
+        grid-template-columns: 1fr 1fr 1fr;
+        border-radius: 0.5rem;
+    }
+
+    .button {
+        margin-top: 4rem;
+    }
+}
+.attribution {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin: 2rem 0 1rem 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #232429;
+}
+.attribution a {
+    color: rgba(35, 36, 41, 0.6);
+    transition: 0.2s ease;
+    text-decoration: underline;
+}
+.attribution a:hover,
+.attribution a:active {
+    color: rgba(35, 36, 41, 0.4);
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.fade-in {
+    animation: fade-in 1.5s;
+    -webkit-animation: fade-in 1.5s;
+}

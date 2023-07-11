@@ -1,0 +1,252 @@
+// Variables
+$clr-primary-cyan: hsl(179, 62%, 43%);
+$clr-primary-yellow: hsl(71, 73%, 54%);
+
+$clr-neutral-light-gray: hsl(204, 43%, 93%);
+$clr-neutral-gray: hsl(218, 22%, 67%);
+
+$ff-primary: 'Karla', sans-serif;
+
+$fw-regular: 400;
+$fw-bold: 700;
+
+// Reset start
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style-type: none;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+//Reset end
+
+// Utility classes & functions start
+.attribution {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin: 0 0 1rem 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: hsla(230, 8%, 15%);
+
+  a {
+    color: hsla(230, 8%, 15%, .6);
+    transition: 0.2s ease;
+    text-decoration: underline;
+  }
+
+  a:hover,
+  a:active {
+    color: hsla(230, 8%, 15%, .4);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fade-in 1.5s;
+  -webkit-animation: fade-in 1.5s;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@function hslac($color, $alpha) {
+  @if(type-of($color) == "color") {
+    @return hsla(hue($color), saturation($color), lightness($color), $alpha);
+  }
+  @else {
+    @error "You didn't pass a color object";
+  }
+}
+// Utility classes & functions end
+
+body {
+  font-family: $ff-primary;
+  background-color: $clr-neutral-light-gray;
+
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 1rem;
+}
+
+main {
+  margin: 4.375rem 1.875rem;
+  overflow: hidden;
+  border-radius: .5rem;
+  box-shadow: hsla(240, 30%, 28%, 0.1) 0 1.875rem 3.75rem -.75rem, hsla(0, 0%, 0%, 0.15) 0 1.125rem 2.25rem -1.125rem;
+}
+
+.card-description {
+  padding: 2rem 1.7rem;
+  background-color: #fff;
+
+  &__heading {
+    font-size: 1.2rem;
+    margin-bottom: 1.35rem;
+    color: $clr-primary-cyan;
+  }
+}
+
+.money-back {
+  font-size: .9rem;
+  color: $clr-primary-yellow;
+}
+
+.paragraph-primary {
+  color: hslac($clr-neutral-gray, .7);
+  font-size: .85rem;
+  margin-top: 1.2rem;
+  line-height: 1.9;
+}
+
+.card-subscription {
+  background-color: $clr-primary-cyan;
+  padding: 1.5rem;
+
+  &__heading {
+    font-size: 1.1rem;
+    color: $clr-neutral-light-gray;
+    margin-bottom: 1.05rem;
+  }
+}
+
+.price {
+  font-size: 2rem;
+  color: $clr-neutral-light-gray;
+  display: flex;
+  align-items: center;
+  gap: .85rem;
+  margin-bottom: .4rem;
+
+  span {
+    font-size: 1rem;
+    color: hslac($clr-neutral-light-gray, .5);
+    font-weight: $fw-regular;
+  }
+}
+
+.paragraph-secondary {
+  color: hslac(#fff, .7);
+}
+
+.btn {
+  font-family: $ff-primary;
+  margin-top: 1.75rem;
+  width: 100%;
+  font-weight: $fw-bold;
+  font-size: 1rem;
+  color: hslac(#fff, .75);
+  background-color: $clr-primary-yellow;
+  border: none;
+  padding: .9rem;
+  border-radius: .35rem;
+  box-shadow: hsl(0, 0%, 0%, 0.2) 0 .25rem .75rem;
+  cursor: pointer;
+  transition: all .25s ease;
+
+  &:hover,
+  &:focus-visible {
+    scale: 1.05;
+    background-color: hslac($clr-primary-yellow, .9);
+  }
+}
+
+.card-why-us {
+  padding: 1.7rem;
+  background-color: hslac($clr-primary-cyan, .8);
+
+  &__heading {
+    color: $clr-neutral-light-gray;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.advantages-list {
+  color: hslac(#fff, .5);
+  font-size: .85rem;
+  line-height: 1.45;
+}
+
+@media only screen and (min-width: 30em) {
+  body {
+    display: grid;
+    place-items: center;
+  }
+  main {
+    max-width: 39.6875em; // 635px
+    margin: 1rem;
+  }
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .card-description {
+    padding: 2.5rem 2.45rem 2.5rem;
+
+    &__heading {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+  .money-back {
+    font-size: 1.1rem;
+  }
+  .paragraph-primary {
+    font-size: .98rem;
+    margin-top: .5rem;
+    line-height: 1.75;
+  }
+  .card-subscription {
+    font-size: 1rem;
+    padding: 2.5rem;
+  }
+  .card-why-us {
+    padding: 2.5rem;
+  }
+}
