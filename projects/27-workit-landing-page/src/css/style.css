@@ -321,6 +321,9 @@ body {
   display: flex;
   justify-content: space-between;
 }
+.footer__socials-list a svg {
+  fill: hsl(271, 12%, 34%);
+}
 
 @media only screen and (min-width: 30em) {
   body {
@@ -466,6 +469,12 @@ body {
   .footer {
     margin-top: 7.5rem;
     height: 6.8rem;
+  }
+  .footer__socials-list a svg {
+    transition: fill 0.25s ease;
+  }
+  .footer__socials-list a:hover svg {
+    fill: hsl(273, 85%, 13%);
   }
 }
 

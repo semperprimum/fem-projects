@@ -150,6 +150,12 @@ body {
     margin: 0;
     display: flex;
     justify-content: space-between;
+
+    a {
+      svg {
+        fill: $clr-neutral-600;
+      }
+    }
   }
 }
 @media only screen and (min-width: 30em) {
@@ -328,5 +334,16 @@ body {
   .footer {
     margin-top: 7.5rem;
     height: 6.8rem;
+
+    &__socials-list {
+      a svg {
+        transition: fill 0.25s ease;
+      }
+      a:hover {
+        svg {
+          fill: $clr-secondary;
+        }
+      }
+    }
   }
 }
