@@ -1,0 +1,332 @@
+@use "./utils" as *;
+@use "./variables" as *;
+@font-face {
+  font-family: "Manrope";
+  src: url(../assets/fonts/manrope/Manrope-VariableFont_wght.ttf)
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Fraunces";
+  src: url(../assets/fonts/fraunces/static/Fraunces_144pt-SemiBold.ttf)
+    format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+body {
+  font-family: $ff-body;
+  color: $clr-secondary;
+
+  background-image: url("../assets/images/bg-purple-mobile.svg"),
+    url("../assets/images/bg-white-mobile.svg");
+  background-size: contain, contain;
+  background-position: top, top 54vh left;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.wrapper {
+  margin: 2.31rem 1rem 1rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.primary-heading {
+  line-height: 1;
+  font-weight: 600;
+  margin-top: 3.75rem;
+}
+
+.underline {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0.25rem;
+    left: 0;
+    width: 100%;
+    height: 0.1875rem;
+    background: $clr-primary;
+  }
+}
+
+.top {
+  text-align: center;
+  .btn-primary {
+    margin: 2.5rem auto 0;
+  }
+}
+
+.hero-image {
+  max-width: 20rem;
+  margin-inline: auto;
+  margin-top: 4rem;
+  padding-left: 1.25rem;
+}
+
+.advantages {
+  text-align: center;
+  margin-top: 4.35rem;
+  &__list {
+    display: grid;
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.advantage {
+  &__number {
+    display: grid;
+    place-items: center;
+    border: 1px solid $clr-neutral-600;
+    width: 3rem;
+    height: 2.875rem;
+    border-radius: 50%;
+    margin-inline: auto;
+    margin-bottom: 1.5rem;
+    aspect-ratio: 1;
+  }
+  &__content {
+    display: grid;
+    gap: 0.75rem;
+  }
+  &__body {
+    line-height: 1.75;
+  }
+}
+
+.cta {
+  margin-top: 22rem;
+  &__content {
+    position: relative;
+    background-color: $clr-secondary;
+    text-align: center;
+    padding: 2rem 1.97rem;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 17.5rem;
+      aspect-ratio: 1;
+      background-image: url("../assets/images/image-founder.webp");
+      background-size: contain;
+      top: -14rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: -10;
+    }
+  }
+  &__heading {
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  &__body {
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.footer {
+  width: 7.25rem;
+  height: 6.389rem;
+  margin-inline: auto;
+  margin-top: 4.62rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__logo-box {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__socials-list {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media only screen and (min-width: 30em) {
+  body {
+    background-image: url("../assets/images/bg-purple-tablet.svg"),
+      url("../assets/images/bg-white-mobile.svg");
+    background-position: top, top 40vh left;
+  }
+}
+
+@media only screen and (min-width: 37.5em) {
+  body {
+    background-image: url("../assets/images/bg-pattern-1.svg"),
+      url("../assets/images/bg-pattern-2.svg"),
+      // url("../assets/images/bg-pattern-3.svg"),
+      url("../assets/images/bg-purple-tablet.svg"),
+      url("../assets/images/bg-white-tablet.svg");
+    background-position: top 10vh left -29.75vw, top 35.5vh right -12.5vw,
+      // bottom 19vh right 6.5vw,
+      top,
+      top 57.5vh left;
+    background-size: 44.5%, 23%,
+      // 29%,
+      contain,
+      contain;
+  }
+  .wrapper {
+    margin: 2.31rem 2.5rem 1rem;
+  }
+  .primary-heading {
+    margin-top: 3.3rem;
+    margin-inline: 8rem;
+  }
+  .hero-image {
+    max-width: 33.5rem;
+    padding-left: 2rem;
+  }
+  .underline {
+    &::after {
+      bottom: 0.4rem;
+    }
+  }
+  .advantages {
+    margin-top: 3.15rem;
+
+    text-align: start;
+    padding: 0 3.7rem;
+
+    &__list {
+      gap: 3rem;
+    }
+  }
+  .advantage {
+    display: flex;
+    gap: 2rem;
+
+    &__number {
+      margin: 2.95rem 0 0;
+    }
+  }
+
+  .cta {
+    display: flex;
+    justify-content: center;
+    margin: 22rem 0 0 10.75rem;
+    position: relative;
+    overflow: visible;
+
+    &::after {
+      content: "";
+      width: 13rem;
+      height: 12.5rem;
+      position: absolute;
+      background-image: url("../assets/images/bg-pattern-3.svg");
+      background-repeat: no-repeat;
+      bottom: -13.5vh;
+      right: 3.3vw;
+    }
+
+    &__content {
+      max-width: 32.125rem;
+      overflow: visible;
+      text-align: start;
+      padding: 2.5rem 3.5rem 3.5rem;
+
+      &::before {
+        left: -7%;
+        top: -40%;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 61.25em) {
+  body {
+    background-image: url("../assets/images/bg-pattern-1.svg"),
+      url("../assets/images/bg-pattern-2.svg"),
+      url("../assets/images/bg-purple-desktop.svg"),
+      url("../assets/images/bg-white-desktop.svg");
+    background-size: 23.75%, 12%, contain, contain;
+    background-position: top 14.5vh left -9.75vw, top 39.4vh right -3.4vw,
+      top left, top 35vw left;
+  }
+  .wrapper {
+    max-width: 69.625rem;
+    margin-inline: auto;
+    margin-top: 3.5rem;
+    margin-bottom: 1rem;
+  }
+  .header {
+    .btn-secondary {
+      margin-top: 0.125rem;
+    }
+  }
+  .primary-heading {
+    max-width: 40rem;
+    margin-inline: auto;
+  }
+  .top {
+    .btn-primary {
+      margin-top: 2.31rem;
+    }
+  }
+  .hero-image {
+    max-width: 51.5rem;
+    margin-top: 3rem;
+    padding-left: 3.35rem;
+  }
+  .advantages {
+    padding: 0;
+    margin-top: 5.65rem;
+    &__list {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.62rem;
+    }
+  }
+  .advantage {
+    display: block;
+    text-align: center;
+    &__number {
+      margin: 0 auto 3.25rem;
+      width: 3.5rem;
+      height: 3.5rem;
+    }
+    &__content {
+      gap: 1.5rem;
+    }
+  }
+  .cta {
+    margin: 28.4rem 0 0 23.8rem;
+
+    &::after {
+      bottom: -6.3vh;
+      right: 6vw;
+    }
+
+    &__content {
+      padding: 3.4rem 4rem 4rem;
+      max-width: 45.625rem;
+      &::before {
+        width: 29.8125rem;
+        top: -41.5%;
+        left: -19.5%;
+      }
+      .btn-primary {
+        padding: 0.81rem 1.6rem 0.9rem;
+      }
+    }
+    &__heading {
+      margin-bottom: 1.5rem;
+    }
+    &__body {
+      margin-bottom: 2.1rem;
+    }
+  }
+  .footer {
+    margin-top: 7.5rem;
+    height: 6.8rem;
+  }
+}

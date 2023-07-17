@@ -1,0 +1,43 @@
+$clr-primary: hsl(150, 100%, 63%); // Eucalyptus
+$clr-secondary: hsl(273, 85%, 13%); // Dark Purple
+
+$clr-neutral-100: hsl(0, 0%, 100%); // White
+$clr-neutral-200: hsl(276, 100%, 99%); // Ghost White
+$clr-neutral-600: hsl(271, 12%, 34%); //Davy's Grey
+
+$ff-body: "Manrope", sans-serif;
+$ff-secondary: "Fraunces", serif;
+
+$fs-400: var(--fs-400);
+$fs-500: var(--fs-500);
+$fs-600: var(--fs-600);
+$fs-700: var(--fs-700);
+$fs-800: var(--fs-800);
+
+:root {
+  --fs-400: 1rem;
+  --fs-500: 1.25rem;
+  --fs-600: 1.75rem;
+  --fs-700: 2rem;
+  --fs-800: 3.125rem;
+}
+
+@media (min-width: 30.875em) {
+  :root {
+    --fs-400: 1rem;
+    --fs-500: 1.25rem;
+    --fs-600: 1.75rem;
+    --fs-700: 3rem;
+    --fs-800: 3.75rem;
+  }
+}
+
+@media (min-width: 61.25em) {
+  :root {
+    --fs-400: 1.125rem;
+    --fs-500: 1.5rem;
+    --fs-600: 2rem;
+    --fs-700: 3.5rem;
+    --fs-800: 5rem;
+  }
+}

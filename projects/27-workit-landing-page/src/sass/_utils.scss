@@ -1,0 +1,177 @@
+@use "./variables" as *;
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&display=swap");
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fade-in 1.5s;
+  -webkit-animation: fade-in 1.5s;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@function hslac($color, $alpha) {
+  @if (type-of($color) == "color") {
+    @return hsla(hue($color), saturation($color), lightness($color), $alpha);
+  } @else {
+    @error "You didn't pass a color object";
+  }
+}
+
+.btn-secondary {
+  color: $clr-neutral-100;
+  letter-spacing: -0.01rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    background: $clr-primary;
+    height: 0.1875rem;
+    margin-top: 0.1rem;
+  }
+}
+
+.btn-primary {
+  border: none;
+  padding: 0.69rem 1.5rem 0.75rem;
+  background: $clr-primary;
+  font-weight: 700;
+  line-height: 2;
+}
+
+@media only screen and (min-width: 61.25em) {
+  .btn-primary {
+    line-height: 1.77778;
+    letter-spacing: -0.01125rem;
+    padding: 0.81rem 2rem 1rem;
+    cursor: pointer;
+    transition: background 0.25s ease, color 0.25s ease;
+
+    &:hover,
+    &:focus-visible {
+      outline: 2px solid $clr-primary;
+      outline-offset: -2px;
+      background: transparent;
+      color: $clr-primary;
+    }
+  }
+
+  .btn-secondary {
+    transition: color 0.15s ease;
+    &:hover,
+    &:focus-visible {
+      color: $clr-primary;
+    }
+  }
+}
+
+.attribution {
+  text-align: center;
+  padding: 3rem 1rem 1rem;
+  font-size: 1rem;
+  font-weight: 900;
+
+  a {
+    color: $clr-primary;
+    filter: brightness(0.9);
+  }
+}
+
+@media only screen and (min-width: 61.25em) {
+  .attribution {
+    width: 100%;
+
+    a {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        background-color: $clr-primary;
+        width: 100%;
+        height: 1.5px;
+        bottom: -1px;
+        left: 0;
+        filter: brightness(0.95);
+
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 200ms ease;
+      }
+      &:hover {
+        &::before {
+          transform-origin: left;
+          transform: scaleX(100%);
+        }
+      }
+    }
+  }
+}
+
+.fs-400 {
+  font-size: $fs-400;
+}
+
+.fs-500 {
+  font-size: $fs-500;
+}
+
+.fs-600 {
+  font-size: $fs-600;
+}
+
+.fs-700 {
+  font-size: $fs-700;
+}
+
+.fs-800 {
+  font-size: $fs-800;
+}
+
+.ff-body {
+  font-family: $ff-body;
+}
+
+.ff-secondary {
+  font-family: $ff-secondary;
+}
+
+.clr-neutral-100 {
+  color: $clr-neutral-100;
+}
+
+.clr-neutral-200 {
+  color: $clr-neutral-200;
+}
+
+.clr-neutral-600 {
+  color: $clr-neutral-600;
+}
+
+.clr-primary {
+  color: $clr-primary;
+}
+
+.clr-secondary {
+  color: $clr-secondary;
+}
