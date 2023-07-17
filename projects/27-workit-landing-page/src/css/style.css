@@ -400,6 +400,9 @@ body {
     background-size: 23.75%, 12%, contain, contain;
     background-position: top 14.5vh left -9.75vw, top 39.4vh right -3.4vw, top left, top 35vw left;
   }
+  body {
+    padding: 0 1rem;
+  }
   .wrapper {
     max-width: 69.625rem;
     margin-inline: auto;
