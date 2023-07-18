@@ -111,7 +111,12 @@
   padding: 0.94rem 2.34rem;
 }
 .btn--gradient-primary:hover {
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%), linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.5) 0%,
+      rgba(255, 255, 255, 0.5) 100%
+    ),
+    linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
 }
 .btn--gradient-secondary {
   background: linear-gradient(180deg, #4851ff 0%, #f02aa6 100%);
@@ -123,14 +128,24 @@
     padding: 0.87rem 2rem 0.88rem;
   }
   .btn--gradient-secondary:hover {
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%), linear-gradient(180deg, #4851ff 0%, #f02aa6 100%);
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.5) 0%,
+        rgba(255, 255, 255, 0.5) 100%
+      ),
+      linear-gradient(180deg, #4851ff 0%, #f02aa6 100%);
   }
   .btn--gradient-primary {
     line-height: 1.55556;
     padding: 1.19rem 2rem 1rem;
   }
   .btn--gradient-primary:hover {
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%), linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.5) 0%,
+        rgba(255, 255, 255, 0.5) 100%
+      ),
+      linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
   }
 }
 .attribution {
@@ -262,7 +277,8 @@ body {
 
 @media only screen and (min-width: 37.5em) {
   body {
-    background-image: url("../assets/image-hero-tablet@2x.webp"), linear-gradient(180deg, #fff, #f0f1ff);
+    background-image: url("../assets/image-hero-tablet@2x.webp"),
+      linear-gradient(180deg, #fff, #f0f1ff);
     background-position: top -13vh right -38.4vw;
     background-repeat: no-repeat, repeat;
     background-size: 90%;
@@ -303,9 +319,10 @@ body {
 }
 @media only screen and (min-width: 60em) {
   body {
-    background-image: url("../assets/image-hero-desktop@2x.webp"), linear-gradient(180deg, #fff, #f0f1ff);
+    background-image: url("../assets/image-hero-desktop@2x.webp"),
+      linear-gradient(180deg, #fff, #f0f1ff);
     background-position: top -18.5vh right -23.5vw, top left;
-    background-size: 72.75%;
+    background-size: 72.75%, contain;
     background-repeat: no-repeat, repeat-x;
     padding-inline: 1rem;
   }
@@ -342,7 +359,8 @@ body {
     line-height: 1.55556;
     margin: 1.5rem 0;
   }
-  .courses__item__btn:hover, .courses__item__btn:focus-visible {
+  .courses__item__btn:hover,
+  .courses__item__btn:focus-visible {
     color: hsl(341, 100%, 83%);
   }
   .courses__item-heading {

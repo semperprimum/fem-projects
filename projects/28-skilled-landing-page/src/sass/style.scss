@@ -155,7 +155,7 @@ body {
   body {
     background-image: url("../assets/image-hero-desktop@2x.webp"), $gradient-bg;
     background-position: top -18.5vh right -23.5vw, top left;
-    background-size: 72.75%;
+    background-size: 72.75%, contain;
     background-repeat: no-repeat, repeat-x;
     padding-inline: 1rem;
   }
