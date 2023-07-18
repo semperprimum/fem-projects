@@ -1,0 +1,104 @@
+@use "./variables" as *;
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.fs-400 {
+  font-size: $fs-400;
+}
+.fs-500 {
+  font-size: $fs-500;
+}
+.fs-600 {
+  font-size: $fs-600;
+}
+.fs-700 {
+  font-size: $fs-700;
+}
+.fs-800 {
+  font-size: $fs-800;
+}
+.fw-regular {
+  font-weight: $fw-regular;
+}
+.fw-bold {
+  font-weight: $fw-bold;
+}
+.fw-extrabold {
+  font-weight: $fw-extrabold;
+}
+.clr-neutral-100 {
+  color: $clr-neutral-100;
+}
+.clr-neutral-300 {
+  color: $clr-neutral-300;
+}
+.clr-neutral-400 {
+  color: $clr-neutral-400;
+}
+.clr-neutral-800 {
+  color: $clr-neutral-800;
+}
+.clr-primary-500 {
+  color: $clr-primary-500;
+}
+.clr-primary-300 {
+  color: $clr-primary-300;
+}
+
+.btn {
+  border: none;
+  background-color: $clr-neutral-800;
+  border-radius: 100vh;
+  line-height: 1.75;
+  padding: 0.56rem 1.5rem 0.69rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $clr-neutral-400;
+  }
+
+  &--gradient-primary {
+    background: $gradient-primary;
+    line-height: 1.625;
+    padding: 0.94rem 2.34rem;
+
+    &:hover {
+      background: $gradient-primary-hover;
+    }
+  }
+  &--gradient-secondary {
+    background: $gradient-secondary;
+  }
+}
+
+@media (min-width: 60em) {
+  .btn {
+    line-height: 1.55556;
+    padding: 0.87rem 2rem 0.88rem;
+
+    &--gradient-secondary {
+      &:hover {
+        background: $gradient-secondary-hover;
+      }
+    }
+
+    &--gradient-primary {
+      line-height: 1.55556;
+      padding: 1.19rem 2rem 1rem;
+
+      &:hover {
+        background: $gradient-primary-hover;
+      }
+    }
+  }
+}

@@ -1,0 +1,234 @@
+@use "./components/variables" as *;
+@use "./components/utils" as *;
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap");
+
+body {
+  font-family: $ff-primary;
+  background-image: $gradient-bg;
+  overflow-x: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: $padding-y;
+  padding-inline: $padding-x;
+
+  &__logo {
+    max-width: 5.5625rem;
+  }
+}
+
+.intro {
+  margin-top: 2.38rem;
+  margin-bottom: -1.25rem;
+
+  &__content {
+    padding-inline: $padding-x;
+  }
+  &__heading {
+    line-height: normal;
+  }
+  &__body {
+    line-height: 1.625;
+    margin-top: 1.62rem;
+    margin-bottom: 1.5rem;
+  }
+  &__img {
+    margin-top: 1.65rem;
+    margin-inline: -1.75rem;
+  }
+}
+
+.courses {
+  padding-inline: $padding-x;
+
+  &__list {
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 2.5rem;
+  }
+  &__item {
+    position: relative;
+    padding: 3.5rem 1.75rem 2rem;
+    background: $clr-neutral-100;
+    border-radius: 0.625rem;
+    box-shadow: 0px 25px 50px 0px rgba(6, 22, 141, 0.04);
+
+    &__heading {
+      line-height: normal;
+    }
+    &__icon {
+      position: absolute;
+      top: -1.5rem;
+    }
+    &__body {
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.625;
+    }
+    &__btn {
+      line-height: 1.55556;
+    }
+
+    &-heading {
+      line-height: 1.33333;
+      background: $gradient-primary;
+      padding: 1.5rem 1.75rem 2rem;
+      border-radius: 0.625rem;
+    }
+  }
+}
+
+.footer {
+  background-color: $clr-neutral-800;
+  margin-top: 5rem;
+  &__logo {
+    svg {
+      max-width: 5.5625rem;
+    }
+  }
+}
+
+.footer__wrapper {
+  padding: 2.25rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// Media queries ⬇️
+
+// Tablets
+@media only screen and (min-width: 37.5em) {
+  body {
+    background-image: url("../assets/image-hero-tablet@2x.webp"), $gradient-bg;
+    background-position: top -13vh right -38.4vw;
+    background-repeat: no-repeat, repeat;
+    background-size: 90%;
+  }
+
+  .intro {
+    margin-top: 6.2rem;
+    display: grid;
+    grid-template-columns: 29rem auto;
+    margin-bottom: 13rem;
+
+    &__img {
+      display: none;
+    }
+  }
+
+  .courses {
+    &__list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 0.62rem;
+      row-gap: 3.5rem;
+    }
+    &__item {
+      padding: 3.5rem 1.4rem 2rem 2rem;
+      display: flex;
+      flex-direction: column;
+
+      &-heading {
+        padding: 3.5rem 2rem;
+      }
+      &__btn {
+        margin-top: auto;
+        align-self: start;
+      }
+    }
+  }
+  .footer {
+    margin-top: 5.25rem;
+  }
+  .footer__wrapper {
+    padding: 2.25rem $padding-x;
+  }
+}
+
+// Desktops
+@media only screen and (min-width: 60em) {
+  body {
+    background-image: url("../assets/image-hero-desktop@2x.webp"), $gradient-bg;
+    background-position: top -18.5vh right -23.5vw, top left;
+    background-size: 72.75%;
+    background-repeat: no-repeat, repeat-x;
+    padding-inline: 1rem;
+  }
+  .wrapper {
+    max-width: 69.375rem;
+    margin-inline: auto;
+  }
+  .header {
+    &__logo {
+      max-width: fit-content;
+    }
+  }
+  .intro {
+    margin-top: 10.75rem;
+    margin-bottom: 15.75rem;
+    &__body {
+      margin-top: 1.81rem;
+      margin-bottom: 2.5rem;
+      line-height: 1.55556;
+    }
+  }
+  .courses {
+    &__list {
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 1.87rem;
+      row-gap: 5rem;
+    }
+    &__item {
+      padding: 4rem 2.1rem 2.5rem 2rem;
+      border-radius: 0.9375rem;
+      transition: scale 0.2s ease;
+
+      &:hover {
+        scale: 1.025;
+      }
+
+      &__body {
+        line-height: 1.55556;
+        margin: 1.5rem 0;
+      }
+      &__btn {
+        &:hover,
+        &:focus-visible {
+          color: $clr-primary-300;
+        }
+      }
+      &-heading {
+        padding: 4rem 2rem 2rem;
+        line-height: 1.25;
+        border-radius: 0.9375rem;
+      }
+    }
+  }
+  .footer {
+    margin-inline: -1rem;
+    margin-top: 8.75rem;
+
+    &__logo {
+      svg {
+        max-width: none;
+      }
+    }
+  }
+  .footer__wrapper {
+    margin-inline: -1rem;
+    margin-inline: auto;
+    max-width: 69.375rem;
+    padding-block: 2rem;
+  }
+}
+
+@media (min-width: 93.5em) {
+  body {
+    background-position: top -25vh right -23.5vw, top left;
+  }
+}
