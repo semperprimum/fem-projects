@@ -92,6 +92,7 @@
 
 body {
   font-family: "IBM Plex Sans", sans-serif;
+  background-color: hsla(20, 33%, 98%, 1);
   background-image: url("../assets/bg-main-mobile.png");
   background-position: top -35vh left;
   background-repeat: no-repeat;
@@ -198,7 +199,8 @@ main {
 
 @media only screen and (min-width: 37.5em) {
   body {
-    background-image: url("../assets/bg-pattern-1.svg"), url("../assets/bg-main-tablet.png");
+    background-image: url("../assets/bg-pattern-1.svg"),
+      url("../assets/bg-main-tablet.png");
     background-position: top -4vh right -9.8vw, top -40vh left -40vw;
     background-size: 16.5rem, 82rem;
   }
@@ -268,7 +270,8 @@ main {
 @media only screen and (min-width: 62.5em) {
   body {
     padding-inline: 1rem;
-    background-image: url("../assets/bg-pattern-1.svg"), url("../assets/bg-main-desktop.png");
+    background-image: url("../assets/bg-pattern-1.svg"),
+      url("../assets/bg-main-desktop.png");
     background-position: top -2.5rem right, top -32.5vh left -20vw;
     background-size: auto, auto;
   }
