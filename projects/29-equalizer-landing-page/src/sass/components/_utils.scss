@@ -1,0 +1,104 @@
+@use "./variables" as *;
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.125rem;
+  padding: 0.94rem 2rem 0.87rem;
+  border: none;
+  border-radius: 0.75rem;
+  font-weight: $fw-bold;
+  line-height: 1.77778;
+  letter-spacing: -0.01125rem;
+
+  &--ios {
+    background-color: $clr-neutral-900;
+  }
+  &--android {
+    background-color: $clr-neutral-100;
+  }
+}
+
+@media (min-width: 60em) {
+  .btn {
+    cursor: pointer;
+    transition: background-color 100ms ease;
+    &--ios {
+      &:hover {
+        background-color: $clr-primary-blue;
+      }
+    }
+    &--android {
+      &:hover {
+        background-color: $clr-primary-yellow;
+      }
+    }
+  }
+}
+
+.attribution {
+  width: 100%;
+  text-align: center;
+  color: $clr-neutral-900;
+  margin-top: 1rem;
+  font-weight: 700;
+
+  a {
+    color: $clr-primary-orange;
+  }
+}
+
+@media (min-width: 60em) {
+  .attribution {
+    a {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 1.5px;
+        bottom: -1px;
+        left: 0;
+        background-color: $clr-primary-orange;
+        transform: scaleX(0);
+        transform-origin: right;
+
+        transition: transform 0.2s ease;
+      }
+      &:hover {
+        &::before {
+          transform-origin: left;
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+}
+
+.clr-neutral-100 {
+  color: $clr-neutral-100;
+}
+.clr-neutral-900 {
+  color: $clr-neutral-900;
+}
+.fw-regular {
+  font-weight: $fw-regular;
+}
+.fw-bold {
+  font-weight: $fw-bold;
+}
