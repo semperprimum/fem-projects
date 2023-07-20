@@ -1,0 +1,151 @@
+@use "./variables" as *;
+
+.fs-300 {
+  font-size: $fs-300;
+}
+.fs-400 {
+  font-size: $fs-400;
+}
+.fs-500 {
+  font-size: $fs-500;
+}
+.fs-600 {
+  font-size: $fs-600;
+}
+.fs-700 {
+  font-size: $fs-700;
+}
+.fw-regular {
+  font-weight: $fw-regular;
+}
+.fw-bold {
+  font-weight: $fw-bold;
+}
+.clr-primary-500 {
+  color: $clr-primary-500;
+}
+.clr-primary-300 {
+  color: $clr-primary-300;
+}
+.clr-secondary-500 {
+  color: $clr-secondary-500;
+}
+.clr-secondary-300 {
+  color: $clr-secondary-300;
+}
+.clr-neutral-100 {
+  color: $clr-neutral-100;
+}
+.clr-neutral-200 {
+  color: $clr-neutral-200;
+}
+.clr-neutral-400 {
+  color: $clr-neutral-400;
+}
+.clr-neutral-800 {
+  color: $clr-neutral-800;
+}
+
+.btn {
+  line-height: 1.625;
+  padding: 1rem 1.81rem;
+  border-radius: 100vh;
+  border: none;
+  background-color: $clr-neutral-800;
+  .version {
+    margin-left: 0.25rem;
+  }
+
+  &--primary {
+    background-color: $clr-primary-500;
+    .version {
+      color: $clr-primary-300;
+    }
+  }
+  &--secondary {
+    background-color: $clr-secondary-500;
+    .version {
+      color: $clr-secondary-300;
+    }
+  }
+  &--lg {
+    padding: 1rem 2.5rem;
+  }
+}
+
+@media only screen and (min-width: 60em) {
+  .btn {
+    cursor: pointer;
+    &--primary {
+      transition: background-color 0.2s ease;
+      &:hover {
+        background-color: $clr-primary-400;
+      }
+    }
+    &--secondary {
+      transition: background-color 0.2s ease;
+      &:hover {
+        background-color: $clr-secondary-400;
+      }
+    }
+  }
+}
+
+.divider {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 1px solid rgba(135, 135, 157, 0.25);
+  background-color: $clr-neutral-100;
+  border-radius: 50%;
+  margin-inline: auto;
+  &::before {
+    content: "";
+    position: absolute;
+    height: 5.25rem;
+    width: 0.0625rem;
+    background-color: rgba(135, 135, 157, 0.25);
+    bottom: 101%;
+  }
+}
+
+.attribution {
+  color: $clr-neutral-100;
+  font-weight: $fw-bold;
+  padding-bottom: 1rem;
+  font-size: 0.85rem;
+
+  a {
+    color: $clr-secondary-500;
+    filter: brightness(0.7);
+  }
+}
+
+@media only screen and (min-width: 60em) {
+  .attribution {
+    a {
+      font-size: 1rem;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $clr-secondary-500;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform 0.2s ease;
+      }
+      &:hover {
+        &::after {
+          transform-origin: left;
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+}

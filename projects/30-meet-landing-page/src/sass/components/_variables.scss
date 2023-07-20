@@ -1,0 +1,49 @@
+$clr-primary-500: hsla(192, 37%, 48%, 1);
+$clr-primary-400: hsla(192, 54%, 64%, 1);
+$clr-primary-300: hsla(192, 90%, 77%, 1);
+$clr-secondary-500: hsla(268, 34%, 53%, 1);
+$clr-secondary-400: hsla(268, 55%, 71%, 1);
+$clr-secondary-300: hsla(268, 100%, 86%, 1);
+
+$clr-neutral-100: hsla(0, 0%, 100%, 1);
+$clr-neutral-200: hsla(0, 0%, 87%, 1);
+$clr-neutral-400: hsla(240, 10%, 57%, 1);
+$clr-neutral-800: hsla(240, 21%, 20%, 1);
+
+$ff-primary: "Red Hat Display", sans-serif;
+$fw-regular: 500;
+$fw-bold: 900;
+
+$fs-300: var(--fs-300);
+$fs-400: var(--fs-400);
+$fs-500: var(--fs-500);
+$fs-600: var(--fs-600);
+$fs-700: var(--fs-700);
+
+$padding-x: var(--padding-x);
+
+:root {
+  --fs-300: 1rem;
+  --fs-400: 1rem;
+  --fs-500: 1.125rem;
+  --fs-600: 2rem;
+  --fs-700: 2.5rem;
+
+  --padding-x: 1.5rem;
+}
+
+@media (min-width: 37.5rem) {
+  :root {
+    --fs-600: 2.5rem;
+    --fs-700: 3rem;
+    --padding-x: 2.5rem;
+  }
+}
+
+@media (min-width: 60rem) {
+  :root {
+    --fs-400: 1.125rem;
+    --fs-700: 4rem;
+    --padding-x: 0;
+  }
+}
