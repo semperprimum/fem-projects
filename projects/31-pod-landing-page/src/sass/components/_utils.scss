@@ -1,0 +1,140 @@
+@use "./variables" as *;
+
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+.clr-primary-500 {
+  color: $clr-primary-500;
+}
+.clr-primary-300 {
+  color: $clr-primary-300;
+}
+.clr-secondary-500 {
+  color: $clr-secondary-500;
+}
+.clr-neutral-900 {
+  color: $clr-neutral-900;
+}
+.clr-neutral-700 {
+  color: $clr-neutral-700;
+}
+.clr-neutral-500 {
+  color: $clr-neutral-500;
+}
+.clr-neutral-300 {
+  color: $clr-neutral-300;
+}
+.clr-neutral-100 {
+  color: $clr-neutral-100;
+}
+.fs-400 {
+  font-size: $fs-400;
+}
+.fs-500 {
+  font-size: $fs-500;
+}
+.fs-600 {
+  font-size: $fs-600;
+}
+.fs-700 {
+  font-size: $fs-700;
+}
+.fw-light {
+  font-weight: $fw-light;
+}
+.fw-thin {
+  font-weight: $fw-thin;
+}
+.fw-extralight {
+  font-weight: $fw-extralight;
+}
+
+.input {
+  background-color: $clr-neutral-700;
+  border: none;
+  border-radius: 100vh;
+  color: $clr-neutral-300;
+  padding: 0.56rem 2rem;
+  line-height: 2;
+  @media (min-width: 37.5em) {
+    padding: 0.88rem 0.5rem 0.88rem 2rem;
+    background-color: 0;
+  }
+  @media (min-width: 60em) {
+    padding: 0.88rem 0.5rem 0.88rem 1.75rem;
+  }
+}
+
+.btn {
+  background-color: $clr-primary-500;
+  border-radius: 100vh;
+  border: none;
+  padding: 0.56rem 2rem;
+  line-height: 2;
+
+  &:focus-visible {
+    outline: 2px dashed $clr-primary-500;
+    outline-offset: 1px;
+  }
+
+  @media only screen and (min-width: 37.5rem) {
+    padding: 0;
+  }
+  @media only screen and (min-width: 60em) {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    &:hover,
+    &:focus-visible {
+      background-color: $clr-primary-300;
+    }
+  }
+}
+
+.attribution {
+  color: $clr-neutral-300;
+  width: 100%;
+  text-align: center;
+  margin-top: 1.5rem;
+  font-weight: 700;
+
+  a {
+    color: $clr-primary-500;
+  }
+  @media only screen and (min-width: 60em) {
+    a {
+      position: relative;
+      transition: color 0.2s ease;
+      &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 1.5px;
+        bottom: -2px;
+        left: 0;
+        background-color: $clr-primary-500;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform 0.2s ease, background-color 0.2s ease;
+      }
+      &:hover {
+        color: $clr-primary-300;
+        &::after {
+          background-color: $clr-primary-300;
+          transform-origin: left;
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+}

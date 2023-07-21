@@ -1,0 +1,220 @@
+@use "./components/variables" as *;
+@use "./components/utils" as *;
+
+body {
+  position: relative;
+  font-family: $ff-primary;
+  background-color: $clr-neutral-900;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/mobile/image-host.jpg");
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.1;
+  }
+}
+
+.header {
+  padding-top: 4rem;
+  &__logo {
+    max-width: min-content;
+    margin-inline: auto;
+  }
+}
+
+.main {
+  margin-inline: 1.5rem;
+  margin-top: 3.5rem;
+  text-align: center;
+  &__heading {
+    line-height: 1.46154;
+    text-transform: uppercase;
+  }
+  &__body {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.66667;
+  }
+}
+
+.platforms {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__item {
+    svg {
+      max-width: 80%;
+    }
+  }
+}
+
+.input-control {
+  & > * {
+    display: block;
+    width: 100%;
+    text-align: start;
+  }
+  &.validation-error {
+    .error {
+      display: block;
+    }
+  }
+}
+
+.form {
+  .btn {
+    margin-top: 1rem;
+    width: 100%;
+    display: block;
+  }
+}
+
+.error {
+  display: none;
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+@media only screen and (min-width: 37.5em) {
+  body {
+    background-image: url("../assets/desktop/bg-pattern-dots.svg");
+    background-repeat: no-repeat;
+    background-position: bottom -0.25rem left 2.5rem;
+    &::before {
+      background-image: url("../assets/tablet/image-host.jpg");
+      background-size: revert;
+      background-repeat: no-repeat;
+      background-position: top right;
+      opacity: 0.8;
+    }
+  }
+  .header {
+    padding-top: 3.1rem;
+    padding-left: 2.5rem;
+    &__logo {
+      margin-inline: revert;
+    }
+  }
+  .main {
+    margin-top: 9.5rem;
+    background-color: $clr-neutral-900;
+    margin-inline: revert;
+    margin-left: 2.5rem;
+    max-width: 40rem;
+    text-align: start;
+    padding: 5.8rem 0 0;
+
+    &__heading {
+      line-height: 1.16667;
+    }
+    &__body {
+      line-height: 1.55556;
+      max-width: 27.8rem;
+      margin-top: 2rem;
+      margin-bottom: 2.5rem;
+    }
+  }
+  .grid-flow {
+    display: grid;
+    gap: 4rem;
+  }
+  .platforms {
+    margin: 0;
+    grid-row: 2;
+  }
+  .form {
+    position: relative;
+    display: flex;
+    max-height: 3.5rem;
+    max-width: 26.6rem;
+    justify-content: space-between;
+    background-color: $clr-neutral-700;
+    border-radius: 100vh;
+    padding: 0.3rem;
+    grid-row: 1;
+    align-items: center;
+    .btn {
+      margin: 0;
+      height: 100%;
+      max-width: 10.125rem;
+      display: inline-block;
+    }
+    &:focus-within {
+      outline: 2px dashed $clr-primary-500;
+      outline-offset: 1px;
+    }
+  }
+  .input-control {
+    & > * {
+      width: revert;
+    }
+    .input {
+      outline: 0;
+      width: 100%;
+    }
+  }
+  .platforms {
+    max-width: 85%;
+    &__item {
+      svg {
+        max-width: 90%;
+      }
+    }
+  }
+  .error {
+    position: absolute;
+  }
+}
+
+@media only screen and (min-width: 60em) {
+  body {
+    background-image: url("../assets/desktop/bg-pattern-dots.svg"),
+      url("../assets/desktop/image-host.jpg");
+    background-repeat: no-repeat, no-repeat;
+    background-position: top 44.88rem right, top 8.12rem right;
+    padding-inline: 1rem;
+    &::before {
+      display: none;
+    }
+  }
+  .wrapper {
+    max-width: 69.375rem;
+    margin-inline: auto;
+  }
+  .main {
+    margin: 6rem 0 0;
+    padding: 5.5rem 3.63rem 0 0;
+    max-width: 45.187rem;
+    &__heading {
+      line-height: 1.19231;
+    }
+    &__body {
+      margin-top: 1.5rem;
+      letter-spacing: -0.006rem;
+    }
+  }
+  .header {
+    padding: 6.38rem 0 0;
+  }
+  .platforms {
+    max-width: none;
+    justify-content: revert;
+    gap: 2.5rem;
+    &__item {
+      &:last-child {
+        margin-left: -0.7rem;
+      }
+      svg {
+        max-width: none;
+      }
+    }
+  }
+}
