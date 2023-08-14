@@ -16,3 +16,7 @@ a:hover {
   color: #6d7f97;
   text-decoration: none;
 }
+
+p {
+	margin: 0;
+}
